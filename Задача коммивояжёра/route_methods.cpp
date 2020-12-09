@@ -31,7 +31,7 @@ double length(const coordinates& from, const coordinates& to)
 	return hypot(to.x - from.x, to.y - from.y);
 }
 
-std::vector<coordinates> clustersToPoints(const std::vector<裭uster>& clusters)
+std::vector<coordinates> clustersToPoints(const std::vector<小luster>& clusters)
 {
 	std::vector<coordinates> result;
 	for (int i = 0; i < clusters.size(); i++)
@@ -48,7 +48,7 @@ std::vector<int> routeToClustersPos(const std::vector<coordinates>& route)
 	return result;
 }
 
-void 裭uster::calcCenter()
+void 小luster::calcCenter()
 {
 	center = coordinates(0, 0);
 	for (auto i : points)
@@ -59,16 +59,16 @@ void 裭uster::calcCenter()
 	center.x /= points.size();
 	center.y /= points.size();
 }
-void 裭uster::addPoints(const std::vector<coordinates>& _points)
+void 小luster::addPoints(const std::vector<coordinates>& _points)
 {
 	points.insert(points.end(), _points.begin(), _points.end());
 	calcCenter();
 }
-std::vector<coordinates>& 裭uster::getPoints()
+std::vector<coordinates>& 小luster::getPoints()
 {
 	return points;
 }
-裭uster::operator coordinates()
+小luster::operator coordinates()
 {
 	return this->center;
 }
@@ -114,7 +114,7 @@ void clusterAnalysis::file_input(const std::string& file_name)
 	while (file >> point.x >> point.y)
 	{
 		std::vector<coordinates> points = { point };
-		裭uster cluster;
+		小luster cluster;
 		cluster.addPoints(points);
 		clusters.push_back(cluster);
 	}
@@ -127,7 +127,7 @@ clusterAnalysis::clusterAnalysis(const std::string &file_name)
 	file_input(file_name);
 }
 
-std::vector<裭uster> clusterAnalysis::getClusters()
+std::vector<小luster> clusterAnalysis::getClusters()
 {
 	return clusters;
 }

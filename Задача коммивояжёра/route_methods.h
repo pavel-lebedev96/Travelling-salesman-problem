@@ -16,9 +16,9 @@ struct coordinates
 	coordinates & operator=(const coordinates & a);
 	bool operator==(const coordinates & a) const;
 };
-/*длина от from до to*/
+/*РґР»РёРЅР° РѕС‚ from РґРѕ to*/
 double length(const coordinates& from, const coordinates& to);
-class Сluster
+class РЎluster
 {
 	std::vector<coordinates> points;
 	void calcCenter();
@@ -30,7 +30,7 @@ public:
 };
 class clusterAnalysis
 {
-	std::vector<Сluster> clusters;
+	std::vector<РЎluster> clusters;
 	std::vector<std::vector<double>> distanceMtrx;
 	std::pair<int, int> minDistance();
 	void makeDistanceMtrx();
@@ -38,25 +38,25 @@ class clusterAnalysis
 	void file_input(const std::string& file_name);
 public:
 	clusterAnalysis(const std::string& file_name);
-	std::vector<Сluster> getClusters();
+	std::vector<РЎluster> getClusters();
 	void file_output();
 	void clustering( int clustersNum);
 	friend class clustersMethod;
 };
-std::vector<coordinates> clustersToPoints(const std::vector<Сluster>& clusters);
+std::vector<coordinates> clustersToPoints(const std::vector<РЎluster>& clusters);
 std::vector<int> routeToClustersPos(const std::vector<coordinates>& route);
 class route_methods
 {
 protected:
-	/*входные данные*/
+	/*РІС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ*/
 	std::vector<coordinates> points;
-	/*маршрут*/
+	/*РјР°СЂС€СЂСѓС‚*/
 	std::vector<coordinates> route;
-	/*длина маршрута*/
+	/*РґР»РёРЅР° РјР°СЂС€СЂСѓС‚Р°*/
 	double route_length;
-	/*пункт отправление*/
+	/*РїСѓРЅРєС‚ РѕС‚РїСЂР°РІР»РµРЅРёРµ*/
 	coordinates depart;
-	/*разделение x и y по разным файлам*/
+	/*СЂР°Р·РґРµР»РµРЅРёРµ x Рё y РїРѕ СЂР°Р·РЅС‹Рј С„Р°Р№Р»Р°Рј*/
 	void divide_xy();
 	void file_input(const std::string& file_name);
 public:

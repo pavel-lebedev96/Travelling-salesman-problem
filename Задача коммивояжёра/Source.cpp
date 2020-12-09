@@ -7,7 +7,7 @@ std::chrono::time_point<std::chrono::system_clock> start, end;
 void choice_clastering()
 {
 	int clustersNum;
-	std::cout << "Êîëè÷åñòâî êëàñòåðîâ:" << std::endl;
+	std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÐºÐ»Ð°ÑÑ‚ÐµÑ€Ð¾Ð²:" << std::endl;
 	std::cin >> clustersNum;
 	clusterAnalysis cA("input.txt");
 	
@@ -41,7 +41,7 @@ void choice_brute_force()
 void choice_clastering_and_bf()
 {
 	int clustersNum;
-	std::cout << "Êîëè÷åñòâî êëàñòåðîâ:" << std::endl;
+	std::cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÐºÐ»Ð°ÑÑ‚ÐµÑ€Ð¾Ð²:" << std::endl;
 	std::cin >> clustersNum;
 	clustersMethod cm({ 0,0 }, "input.txt", clustersNum);
 	
@@ -57,8 +57,8 @@ int main()
 	char choice, clustersNum;
 	do
 	{
-		std::cout << "Êëàñòåðèçàöèÿ - 1" << std::endl;
-		std::cout << "Ïîñòðîåíèå ìàðøðóòîâ  - 2" << std::endl;
+		std::cout << "ÐšÐ»Ð°ÑÑ‚ÐµÑ€Ð¸Ð·Ð°Ñ†Ð¸Ñ - 1" << std::endl;
+		std::cout << "ÐŸÐ¾ÑÑ‚Ñ€Ð¾ÐµÐ½Ð¸Ðµ Ð¼Ð°Ñ€ÑˆÑ€ÑƒÑ‚Ð¾Ð²  - 2" << std::endl;
 		choice = _getch();
 	} while (choice != '1' && choice != '2');
 	system("cls");
@@ -66,9 +66,9 @@ int main()
 		choice_clastering();
 	do
 	{
-		std::cout << "Ìåòîä áëèæàéøåãî ñîñåäà - 1" << std::endl;
-		std::cout << "Ïîëíûé ïåðåáîð  - 2" << std::endl;
-		std::cout << "Êëàñòåðèçàöèÿ è ïîëíûé ïåðåáîð  - 3" << std::endl;
+		std::cout << "ÐœÐµÑ‚Ð¾Ð´ Ð±Ð»Ð¸Ð¶Ð°Ð¹ÑˆÐµÐ³Ð¾ ÑÐ¾ÑÐµÐ´Ð° - 1" << std::endl;
+		std::cout << "ÐŸÐ¾Ð»Ð½Ñ‹Ð¹ Ð¿ÐµÑ€ÐµÐ±Ð¾Ñ€  - 2" << std::endl;
+		std::cout << "ÐšÐ»Ð°ÑÑ‚ÐµÑ€Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð¸ Ð¿Ð¾Ð»Ð½Ñ‹Ð¹ Ð¿ÐµÑ€ÐµÐ±Ð¾Ñ€  - 3" << std::endl;
 		choice = _getch();
 	} while (choice != '1' && choice != '2' && choice != '3');
 	system("cls");
